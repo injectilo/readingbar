@@ -1,6 +1,6 @@
 /*
 TODO LIST
-make it plug in
+make it plug-in
 apply to article
 config color
 config position
@@ -8,6 +8,17 @@ marker localstorage
 */
 
 (function(){
+	/* printing readingBar */
+	var bar = document.createElement("div");
+	bar.className = "bar";
+	document.body.appendChild(bar);
+	var complete = document.createElement("div");
+	complete.className = "complete";
+	bar.appendChild(complete);
+	var time = document.createElement("div");
+	time.className = "time";
+	bar.appendChild(time);
+
 	var articulo = $("#articulo").html();
 	var splitpalabras = articulo.split(/\b[\s,\.\-:;]*/);
 	var total = splitpalabras.length;
@@ -25,16 +36,9 @@ marker localstorage
 	$(".complete").html("<span class='porcentaje'>" + porcentajeFinal + "</span>");
 	$(".complete").css("width", porcentajeFinal);
 
-	/* printing readingBar */
-	var bar = document.createElement("div");
-	bar.className = "bar";
-	document.body.appendChild(bar);
-	var complete = document.createElement("div");
-	complete.className = "complete";
-	bar.appendChild(complete);
-	var time = document.createElement("div");
-	time.className = "time";
-	bar.appendChild(time);
+	
+
+	$(".complete").css("background-color", "orange");
 
 	$(window).scroll(function(){
 		porcentaje = ($(document).scrollTop() * 100) / totalScroll;
