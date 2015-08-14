@@ -1,3 +1,12 @@
+/*
+TODO LIST
+make it plug in
+apply to article
+config color
+config position
+marker localstorage
+*/
+
 (function(){
 	var articulo = $("#articulo").html();
 	var splitpalabras = articulo.split(/\b[\s,\.\-:;]*/);
@@ -26,7 +35,6 @@
 	var time = document.createElement("div");
 	time.className = "time";
 	bar.appendChild(time);
-
 
 	$(window).scroll(function(){
 		porcentaje = ($(document).scrollTop() * 100) / totalScroll;
