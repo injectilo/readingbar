@@ -9,9 +9,15 @@ marker localstorage
 
 (function($) {
 	$.fn.extend({
-		readingbar: function() {
-			//console.log(id)
+		readingbar: function(options) {
+			//console.log(readingbar.options);
 			/* printing readingBar */
+
+			var setting = $.extends({
+				backgroundColor: "orange"
+			}, options);
+
+
 			var bar = document.createElement("div");
 			bar.className = "bar";
 			document.body.appendChild(bar);
@@ -46,7 +52,6 @@ marker localstorage
 				finalPercent = Math.round(percent) + "%";
 				$(".complete").css("width", finalPercent);
 				$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
-
 			});
 		}
 	})
