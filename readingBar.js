@@ -36,7 +36,7 @@ marker localstorage
 	$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
 	$(".complete").css("width", finalPercent);
 
-	$(".complete").css("background-color", "orange");
+	//$(".complete").css("background-color", "orange");
 
 	$(window).scroll(function(){
 		percent = ($(document).scrollTop() * 100) / totalScroll;
