@@ -19,32 +19,30 @@ marker localstorage
 	time.className = "time";
 	bar.appendChild(time);
 
-	var articulo = $("#articulo").html();
-	var splitpalabras = articulo.split(/\b[\s,\.\-:;]*/);
-	var total = splitpalabras.length;
+	var mycontent = $("#my-content").html();
+	var splitwords = mycontent.split(/\b[\s,\.\-:;]*/);
+	var total = splitwords.length;
 
 	var estimateTime = (total * 60) / 180;
 	var estimateTimeMinutes = Math.round(estimateTime / 60);
 	$(".time").html("Read in " + estimateTimeMinutes + " min.");
 
 	var totalScroll = $(document).height() - $(window).height();
-	var offsetArt = $("#articulo").offset().top;
+	var offsetArt = $("#my-content").offset().top;
 	var porcentajeOffset = Math.round((offsetArt * 100) / totalScroll); 
 
-	var porcentaje = ($(document).scrollTop() * 100) / totalScroll;
-	var porcentajeFinal = Math.round(porcentaje) + "%";
-	$(".complete").html("<span class='porcentaje'>" + porcentajeFinal + "</span>");
-	$(".complete").css("width", porcentajeFinal);
-
-	
+	var percent = ($(document).scrollTop() * 100) / totalScroll;
+	var finalPercent = Math.round(percent) + "%";
+	$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
+	$(".complete").css("width", finalPercent);
 
 	$(".complete").css("background-color", "orange");
 
 	$(window).scroll(function(){
-		porcentaje = ($(document).scrollTop() * 100) / totalScroll;
-		porcentajeFinal = Math.round(porcentaje) + "%";
-		$(".complete").css("width", porcentajeFinal);
-		$(".complete").html("<span class='porcentaje'>" + porcentajeFinal + "</span>");
+		percent = ($(document).scrollTop() * 100) / totalScroll;
+		finalPercent = Math.round(percent) + "%";
+		$(".complete").css("width", finalPercent);
+		$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
 
 	});
 	

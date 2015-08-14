@@ -10,13 +10,6 @@
 	font-weight: bold;
 }
 
-#articulo {
-	width: 80%;
-	margin:10em 5em;
-	padding: 4em;
-	border: 1px solid black;
-}
-
 .complete {
 	display: block;
 	position: relative;
@@ -30,7 +23,7 @@
 	z-index: 2;
 }
 
-.porcentaje {
+.percent {
 	bottom: 0;
 	float: left;
 	font-size: 1.5em;
