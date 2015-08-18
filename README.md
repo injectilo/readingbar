@@ -10,12 +10,12 @@ Importa jquery y el archivo readingBar.js y su dependencia css
 
 A continuación tienes dos modos de uso.
 
-### Básico
+### Basic
 ```
 $("#my-content").readingbar();
 ```
 
-### Personalizado
+### Custom
 ```
 $("#my-content").readingbar({
 	backgroundColor : "orange",
