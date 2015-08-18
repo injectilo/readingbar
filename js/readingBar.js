@@ -1,10 +1,10 @@
 /*
 TODO LIST
-make it plug-in
-apply to article
-config color
-config position
-marker localstorage
+
+- apply to article
+- config position
+- on resize
+- marker localstorage
 */
 
 (function($) {
@@ -45,9 +45,9 @@ marker localstorage
 			if(options){
 
 				if(options.percent == false) {
-						$(".complete").html("<span class='percent'>" + " " + "</span>");
+					$(".complete").html("<span class='percent'>" + " " + "</span>");
 				} else {
-						$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
+					$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
 				}
 
 				if(options.backgroundColor !== "") {
