@@ -10,14 +10,9 @@ marker localstorage
 (function($) {
 	$.fn.extend({
 		readingbar: function(options) {
-			//console.log(readingbar.options);
+
 			/* printing readingBar */
-
-			var setting = $.extends({
-				backgroundColor: "orange"
-			}, options);
-
-
+	
 			var bar = document.createElement("div");
 			bar.className = "bar";
 			document.body.appendChild(bar);
@@ -45,7 +40,18 @@ marker localstorage
 			$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
 			$(".complete").css("width", finalPercent);
 
-			//$(".complete").css("background-color", "orange");
+			/* Options */
+
+			if(options){
+
+				//console.log(options)
+
+				if(options.backgroundColor != "") {
+					$(".complete").css("background-color", options.backgroundColor);	
+				}
+
+			}
+
 
 			$(window).scroll(function(){
 				percent = ($(document).scrollTop() * 100) / totalScroll;
