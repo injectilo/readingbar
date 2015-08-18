@@ -32,9 +32,11 @@ TODO LIST
 			var estimateTimeMinutes = Math.round(estimateTime / 60);
 			$(".time").html("Read in " + estimateTimeMinutes + " min.");
 
+
 			var totalScroll = $(document).height() - $(window).height();
 			var offsetArt = $("#my-content").offset().top;
-			var porcentajeOffset = Math.round((offsetArt * 100) / totalScroll); 
+			var offsetPercent = Math.round((offsetArt * 100) / totalScroll); 
+
 
 			var percent = ($(document).scrollTop() * 100) / totalScroll;
 			var finalPercent = Math.round(percent) + "%";
@@ -46,6 +48,7 @@ TODO LIST
 			settings();
 
 			$(window).scroll(function(){
+				var totalScroll = $(document).height() - $(window).height();
 				percent = ($(document).scrollTop() * 100) / totalScroll;
 				finalPercent = Math.round(percent) + "%";
 
@@ -54,20 +57,6 @@ TODO LIST
 				settings();
 
 			});
-
-			/*
-
-			$(window).on('resize', function(){
-
-				percent = ($(document).scrollTop() * 100) / totalScroll;
-				console.log(percent)
-				finalPercent = Math.round(percent) + "%";
-
-				$(".complete").css("width", finalPercent);
-				//settings();
-
-			});
-		*/
 
 
 			function settings(){
