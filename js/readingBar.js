@@ -44,20 +44,43 @@ marker localstorage
 
 			if(options){
 
-				//console.log(options)
-
-				if(options.backgroundColor != "") {
-					$(".complete").css("background-color", options.backgroundColor);	
+				if(options.percent == false) {
+						$(".complete").html("<span class='percent'>" + " " + "</span>");
+				} else {
+						$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
 				}
 
+				if(options.backgroundColor !== "") {
+					$(".complete").css("background-color", options.backgroundColor);	
+				}
 			}
+			
 
 
 			$(window).scroll(function(){
 				percent = ($(document).scrollTop() * 100) / totalScroll;
 				finalPercent = Math.round(percent) + "%";
+
 				$(".complete").css("width", finalPercent);
-				$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
+
+				//console.log(options.percent)
+
+				if(options){
+
+					if(options.percent == false) {
+						$(".complete").html("<span class='percent'>" + " " + "</span>");
+					} else {
+						$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
+					}
+
+				} else {
+					$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
+				}
+				
+
+
+
+
 			});
 		}
 	})
