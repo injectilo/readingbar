@@ -54,7 +54,6 @@ marker localstorage
 					$(".complete").css("background-color", options.backgroundColor);	
 				}
 			}
-			
 
 
 			$(window).scroll(function(){
@@ -77,9 +76,6 @@ marker localstorage
 					$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
 				}
 				
-
-
-
 
 			});
 		}
