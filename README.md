@@ -19,6 +19,7 @@ $("#my-content").readingbar();
 ```
 $("#my-content").readingbar({
 	backgroundColor : "orange",
+	height : 40,
 	percent : false
 });
 ```
