@@ -4,6 +4,7 @@ TODO LIST
 - apply to article
 - config position
 - on resize
+- font relative - height
 - marker localstorage
 */
 
@@ -66,7 +67,7 @@ TODO LIST
 				//settings();
 
 			});
-*/
+		*/
 
 
 			function settings(){
