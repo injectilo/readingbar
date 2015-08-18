@@ -42,19 +42,7 @@ TODO LIST
 
 			/* Options */
 
-			if(options){
-
-				if(options.percent == false) {
-					$(".complete").html("<span class='percent'>" + " " + "</span>");
-				} else {
-					$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
-				}
-
-				if(options.backgroundColor !== "") {
-					$(".complete").css("background-color", options.backgroundColor);	
-				}
-			}
-
+			settings();
 
 			$(window).scroll(function(){
 				percent = ($(document).scrollTop() * 100) / totalScroll;
@@ -62,7 +50,26 @@ TODO LIST
 
 				$(".complete").css("width", finalPercent);
 
-				/*options when scroll */
+				settings();
+
+			});
+
+			/*
+
+			$(window).on('resize', function(){
+
+				percent = ($(document).scrollTop() * 100) / totalScroll;
+				console.log(percent)
+				finalPercent = Math.round(percent) + "%";
+
+				$(".complete").css("width", finalPercent);
+				//settings();
+
+			});
+*/
+
+
+			function settings(){
 
 				if(options){
 
@@ -72,11 +79,16 @@ TODO LIST
 						$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
 					}
 
-				} else {
-					$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
+					if(options.backgroundColor !== "") {
+						$(".complete").css("background-color", options.backgroundColor);	
+					}
+					if(options.height != "") {
+						$(".bar").css("height", options.height + "px");	
+
+					}
 				}
 
-			});
+			}
 		}
 	})
 })(jQuery)
