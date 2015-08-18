@@ -62,7 +62,7 @@ marker localstorage
 
 				$(".complete").css("width", finalPercent);
 
-				//console.log(options.percent)
+				/*options when scroll */
 
 				if(options){
 
@@ -75,7 +75,6 @@ marker localstorage
 				} else {
 					$(".complete").html("<span class='percent'>" + finalPercent + "</span>");
 				}
-				
 
 			});
 		}
