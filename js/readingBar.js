@@ -24,7 +24,7 @@ TODO LIST
 
 			var saveScroll = document.createElement("div");
 			saveScroll.className = "saveScroll";
-			bar.appendChild(saveScroll);
+			document.body.appendChild(saveScroll);
 
 			var mycontent = $("#my-content").html();
 			var splitwords = mycontent.split(/\b[\s,\.\-:;]*/);
@@ -35,7 +35,7 @@ TODO LIST
 			var estimateTimeMinutes = Math.round(estimateTime / 60);
 			$(".time").html("Read in " + estimateTimeMinutes + " min.");
 
-			$(".saveScroll").html("go to last position");
+			$(".saveScroll").html("<a href='#'>you was here</a>");
 
 			var totalScroll = $(document).height() - $("#my-content").height();
 			var offsetArt = $("#my-content").offset().top;
